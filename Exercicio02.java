@@ -25,38 +25,58 @@ public class Exercicio02 {
                 menor = vetor[i];
             }
         }
+        System.out.println("O maior número dessa lista é o " + maior + ", e o menor é o " + menor + ".");
 
         if (y < z) {
             if (x >= y && x <= z) {
-                System.out.println(x + " está dentro do intervalo fechado de " + y + "e " + z + ".");
+                System.out.println(x + " está dentro do intervalo fechado de " + y + " e " + z + ".");
             }
             else {
-                System.out.println(x + " está fora do intervalo fechado de " + y + "e " + z + ".");
+                System.out.println(x + " está fora do intervalo fechado de " + y + " e " + z + ".");
             }
         }
         else if (y > z) {
             if (x >= z && x <= y) {
-                System.out.println(x + " está dentro do intervalo fechado de " + z + "e " + y + ".");
+                System.out.println(x + " está dentro do intervalo fechado de " + z + " e " + y + ".");
             }
             else {
-                System.out.println(x + " está fora do intervalo fechado de " + z + "e " + y + ".");
+                System.out.println(x + " está fora do intervalo fechado de " + z + " e " + y + ".");
             }
         }
         else {
             if (x == y) {
-                System.out.println(x + " está dentro do intervalo fechado de " + y + "e " + z + ".");
+                System.out.println(x + " está dentro do intervalo fechado de " + y + " e " + z + ".");
             }
             else {
-                System.out.println(x + " está fora do intervalo fechado de " + y + "e " + z + ".");
+                System.out.println(x + " está fora do intervalo fechado de " + y + " e " + z + ".");
             }
         }
 
-        // DIVISIBILIDADE POR 0 É UM ERRO AQUI, CONSERTAR
-        if (x % y == 0) {
-            System.out.println(x + " é divisível por " + y + ".");
+        if (x == 0) {
+            for (int i = 1; i < vetor.length; i++) {
+                if (vetor[i] != 0) {
+                    System.out.println(x + " é divisível por " + vetor[i] + ".");
+                }
+                else {
+                    System.out.println(x + " não é divisível por " + vetor[i] + ".");
+                }
+            }
+
         }
-        if (x % z == 0) {
-            System.out.println(x + " é divisível por " + z + ".");
+        else {
+            for (int i = 1; i < vetor.length; i++) {
+                if (vetor[i] == 0) {
+                    System.out.println(x + " não é divisível por " + vetor[i] + ".");
+                }
+                else {
+                    if (x % vetor[i] == 0) {
+                        System.out.println(x + " é divisível por " + vetor[i] + ".");
+                    }
+                    else {
+                        System.out.println(x + " não é divisível por " + vetor[i] + ".");
+                    }
+                }
+            }
         }
     }
 }
